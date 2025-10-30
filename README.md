@@ -1,5 +1,5 @@
-# Yunzai Windows Installer
+# Philia Windows Installer
 
 ## Nightly build
 
-https://github.com/TimeRainStarSky/Yunzai-Windows-Installer/releases/tag/nightly
+https://github.com/TRSSo/Philia-Windows-Installer/releases/tag/nightly

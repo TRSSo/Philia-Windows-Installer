@@ -32,9 +32,9 @@ echo "$CHECKSUM $BASE.7z" | sha256sum --quiet --check
 TEMP="$OUTPUT.payload"
 rm -rf "$TEMP"
 "$BASE/bin/7zr.exe" a "$TEMP" -ms1T -mx9 install.ps1 7z.{exe,dll}
-mv -f "$INPUT" Yunzai.tar.zst
-"$BASE/bin/7zr.exe" a "$TEMP" -mx0 Yunzai.tar.zst
-mv -f Yunzai.tar.zst "$INPUT"
+mv -f "$INPUT" Philia.tar.zst
+"$BASE/bin/7zr.exe" a "$TEMP" -mx0 Philia.tar.zst
+mv -f Philia.tar.zst "$INPUT"
 "$BASE/bin/7zr.exe" t "$TEMP"
 cat "$BASE/bin/7zSD.sfx" - "$TEMP" > "$OUTPUT" << 'EOF'
 ;!@Install@!UTF-8!
@@ -42,4 +42,4 @@ ExecuteFile="powershell.exe"
 ExecuteParameters="-ExecutionPolicy Bypass .\install.ps1"
 ;!@InstallEnd@!
 EOF
-rm -rf 7z.exe Yunzai.7z "$TEMP" "$BASE"
+rm -rf 7z.exe Philia.7z "$TEMP" "$BASE"
