@@ -1,3 +1,4 @@
+_pkgname="Philia"
 echo "[Creating application...]"
 
 mktmp(){
