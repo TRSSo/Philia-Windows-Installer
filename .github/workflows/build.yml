@@ -65,14 +65,13 @@ jobs:
         run: |
           mv Philia-*.sfx.exe "Philia-$env:FILE_NAME.sfx.exe"
           mv Philia-*.tar.zst "Philia-$env:FILE_NAME.tar.zst"
-          sha256sum Philia-* | tee Philia-checksums.txt
+          sha512sum.exe Philia-* | tee.exe Philia-sha512sum.txt
 
       - name: Upload Results
         uses: actions/upload-artifact@v6
         with:
           name: Philia-${{ steps.set_env.outputs.FILE_NAME }}
           path: Philia-*
-          compression-level: 0
 
       - name: Upload to Release
         if: steps.set_env.outputs.FILE_NAME != 'nightly' && github.event_name != 'pull_request'
